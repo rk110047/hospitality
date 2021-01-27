@@ -1,0 +1,10 @@
+{% include 'home.html' %}
+{% block body %}
+	<div class="" style="position:absolute;left: 20%;right:20%">
+		<form class="form" method="POST" style="display: flex;flex-direction: column;width: 100%;padding: 10px">
+			{% csrf_token %}
+			{{ form }}
+			<button class="button " style="background-color: #17baa1;margin-top: 20px;color: #fff" type="submit">EDIT</button>
+		</form>
+	</div>
+{% endblock %}

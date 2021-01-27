@@ -1,0 +1,36 @@
+{% include 'home.html' %}
+{% block body %}
+		<a class='nav-link' href="{% url 'places-information-create' %}" style="color: #fff;background-color:orange;width:230px;margin:20px;font-size:25px;border-radius:400px;font-style:italic"> + Places To Visit	
+</a>
+	<center>
+		<div>
+				<table class="table table-striped mt-5 shadow-sm" style="border-collapse:collapse; table-layout:fixed; width: 80%">
+					<thead>
+						<tr>
+							<th style="background-color: #17baa1;color: #fff">Name</th>
+							<th style="background-color: #17baa1;color: #fff">Description</th>
+							<th style="background-color: #17baa1;color: #fff">City</th>
+							<th style="background-color: #17baa1;color: #fff">Opeaning Time</th>
+							<th style="background-color: #17baa1;color: #fff">Closing Time</th>
+							<th style="background-color: #17baa1;color: #fff">Images</th>
+							<th style="background-color: #17baa1;color: #fff">Edit</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for data in data %}
+							<tr>
+								<th>{{ data.name }}</th>
+								<th>{{ data.description }}</th>
+								<th>{{ data.city }}</th>
+								<th>{{ data.opening_timming }}</th>
+								<th>{{ data.closing_timming }}</th>
+								<th><a href="{% url 'places-images' data.id %}">Images</a></th>
+								<th><a href="{% url 'places-information-edit' data.id %}">Edit</a></th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		
+		</div>
+	</center>
+{% endblock %}

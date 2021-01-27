@@ -1,0 +1,13 @@
+{% include 'home.html' %}
+{% block body %}
+<div>
+	<button class="btn btn-danger" style="position: absolute;right: 10%;margin: 20px" type="submit">Delete</button>
+	<div class="" style="position:absolute;left: 20%;right:20%">
+		<form class="form" method="POST" style="display: flex;flex-direction: column;width: 100%;padding: 10px">
+			{% csrf_token %}
+			{{ form }}
+			<button class="button " style="background-color: #17baa1;margin-top: 20px;color: #fff" type="submit">EDIT</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

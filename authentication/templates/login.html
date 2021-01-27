@@ -1,0 +1,29 @@
+{% include 'base.html' %}
+{% block content %}
+<div class="container">
+	<div class="col-6 mt-5 offset-md-4" style="width:400px;elevation:2px">
+		<div class="card mt-5 shadow-sm" style="width:400px;background-color:#eee" >
+			<div style="background-color:orange">
+					<h2 class="m-1" style="color:#ffffff">Login</h2>
+			</div>
+			<form class="my-4" method="post" action=".">
+				{% csrf_token %}
+				
+					<div class="m-3 form-group">
+						<label for="username">Username :</label>
+						<center><input class="form-control" id="username" type="text" name="username"></center>
+					</div>
+					<div class="m-3 form-group">
+						<label>Password :</label>
+						<center><input class="form-control" type="password" name="password"></center>
+					</div>
+					<div >
+						<center><button class="btn btn-light " style="background-color:#17baa1;width:370px;color:#ffffff" color="red" >login</button></center>
+				    </div>
+					
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

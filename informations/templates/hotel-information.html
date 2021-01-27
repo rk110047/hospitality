@@ -1,0 +1,30 @@
+{% include 'home.html' %}
+{% block body %}
+		<a class='nav-link' href="{% url 'hotel-information-create' %}" style="color: #fff;background-color:orange;width:350px;margin:20px;font-size:25px;border-radius:400px;font-style:italic"> + Create Hotel Information		
+</a>
+	<center>
+		<div>
+				<table class="table table-striped mt-5 shadow-sm" style="border-collapse:collapse; table-layout:fixed; width: 80%">
+					<thead>
+						<tr>
+							<th style="background-color: #17baa1;color: #fff">Name</th>
+							<th style="background-color: #17baa1;color: #fff">Description</th>
+							<th style="background-color: #17baa1;color: #fff">Images</th>
+							<th style="background-color: #17baa1;color: #fff">Edit</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for data in data %}
+							<tr>
+								<th>{{ data.name }}</th>
+								<th>{{ data.description }}</th>
+								<th><a href="{% url 'hotel-information-images' data.id %}">Images</a></th>
+								<th><a href="{% url 'hotel-information-edit' data.id %}">Edit</a></th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		
+		</div>
+	</center>
+{% endblock %}

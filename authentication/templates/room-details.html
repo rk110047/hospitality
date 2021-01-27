@@ -1,0 +1,82 @@
+{% include 'home.html' %}
+{% block body %}
+
+	<center>
+		<div>
+			<P style="background-color: black;color: #fff;height: 30px;margin: 5px">Services</P>
+				<table class="table  table-striped mt-5 shadow-sm" style="word-wrap:break-word;width: 80%">
+					<thead>
+						<tr>
+							<th style="background-color: #17baa1;color: #fff">Service Name</th>
+							<th style="background-color: #17baa1;color: #fff">Service Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for service in services %}
+							<tr>
+								<th>{{ service.service }}</th>
+								<th>{{ service.price }}</th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		
+		</div>
+	</center>
+
+
+	<center>
+		<div>
+			<P style="background-color: black;color: #fff;height: 30px;margin: 5px">Foods</P>
+				<table class="table table-striped mt-5 shadow-sm" style="border-collapse:collapse; table-layout:fixed; width: 80%">
+					<thead>
+						<tr>
+							<th style="background-color: #17baa1;color: #fff">Food Item</th>
+							<th style="background-color: #17baa1;color: #fff">Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for food in food %}
+							<tr>
+								<th>{{ food.food_item }}</th>
+								<th>{{ food.price }}</th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		
+		</div>
+	</center>
+
+	<center>
+    	<P style="background-color: black;color: #fff;height: 30px;margin: 5px">Final Charges</P>
+	    <table class="table table-striped my-5 shadow-sm" style="word-wrap:break-word;width: 80%">
+	    <tbody>
+	      <tr>
+	        <th style="color:#17baa1">Room</th>
+	        <th style="color:orange">{{obj.room}}</th>
+	      </tr>
+	      <tr>
+	        <th style="color:#17baa1">Service Charges</th>
+	        <th style="color:orange">{{obj.service_charges}}</th>
+	      </tr>
+	      <tr>
+	        <th style="color:#17baa1">Food Charges</th>
+	        <th style="color:orange">{{obj.food_charges}}</th>
+	      </tr>
+	      <tr>
+	        <th style="color:#17baa1">Total</th>
+	        <th style="color:orange">{{obj.charges}}</th>
+	      </tr>
+	      <tr>
+	        <th style="background-color:#17baa1;color: #fff">Paid Status</th>
+	        <th style="background-color:orange;color: #fff">
+	        	{{ obj.paid }}
+
+	      </tr>
+	      </tbody>
+	    </table>
+	</center>
+
+
+{% endblock %}

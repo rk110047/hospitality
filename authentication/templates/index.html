@@ -1,0 +1,23 @@
+{% include 'home.html'%}
+{% block body %}
+<center>
+	  <table class="table   table-striped col-10 mt-3  shadow-sm" style="width:80%;align-self: center;">
+	  	<thead>
+		  	<tr>
+		  		<th style="background-color:#17baa1;color:#ffff">Room No.</th>
+		  		<th style="background-color:#17baa1;color:#ffff">Name</th>
+		  		<th style="background-color:#17baa1;color:#ffff">Details</th>
+		  	</tr>
+	  	</thead>
+	  	<tbody>
+		  	{% for obj in obj %}
+		  		<tr>
+		  			<th>{{ obj.room_number }}</th>
+		  			<th>{{ obj.client_name }}</th>
+		  			<th><a href="{% url 'room-detail' obj.room_number %}">view details</a></th>
+		  		</tr>
+		  	{% endfor %}
+	  	</tbody>
+	  </table>
+ </center>
+{% endblock %}

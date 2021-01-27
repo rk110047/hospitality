@@ -1,0 +1,31 @@
+{% include 'home.html' %}
+{% block body %}
+<a class='nav-link' href="{% url 'service-create' %}" style="color: #fff;background-color:orange;width:230px;margin:20px;font-size:25px;border-radius:400px;font-style:italic"> + Create Service</a>
+
+	<center>
+		<div>
+				<table class="table table-striped mt-5 shadow-sm" style="border-collapse:collapse; table-layout:fixed; width: 80%">
+					<thead>
+						<tr>
+							<th style="background-color: #17baa1;color: #fff">Service Name</th>
+							<th style="background-color: #17baa1;color: #fff">Description</th>
+							<th style="background-color: #17baa1;color: #fff">Service Price</th>
+							<th style="background-color: #17baa1;color: #fff">Edit</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for service in services %}
+							<tr>
+								<th>{{ service.service_name }}</th>
+								<th>{{ service.description }}</th>
+								<th>{{ service.service_price }}</th>
+								<th><a href="{% url 'service-edit' service.id%}">Edit</a></th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		
+		</div>
+	</center>
+
+{% endblock %}

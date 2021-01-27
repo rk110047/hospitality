@@ -1,0 +1,33 @@
+{% include 'home.html' %}
+{% block body %}
+	<a class='nav-link' href="{% url 'food-item-create' %}" style="color: #fff;background-color:orange;width:250px;margin:20px;font-size:25px;border-radius:400px;font-style:italic"> + Create Food Item<a>
+	<center>
+		<div>
+				<table class="table table-striped mt-5 shadow-sm" style="border-collapse:collapse; table-layout:fixed; width: 80%">
+					<thead>
+						<tr>
+							<th style="background-color: #17baa1;color: #fff">Item Type</th>
+							<th style="background-color: #17baa1;color: #fff">Item Name</th>
+							<th style="background-color: #17baa1;color: #fff">Item Description</th>
+							<th style="background-color: #17baa1;color: #fff">Item Price</th>
+							<th style="background-color: #17baa1;color: #fff">Images</th>
+							<th style="background-color: #17baa1;color: #fff">Edit</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for food in foods %}
+							<tr>
+								<th>{{ food.item_type }}</th>
+								<th>{{ food.item_name }}</th>
+								<th>{{ food.item_description }}</th>
+								<th>{{ food.item_price }}</th>
+								<th><a href="{% url 'food-item-images' food.id %}">Images</a></th>
+								<th><a href="{% url 'food-item-edit' food.id %}">Edit</a></th>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+		
+		</div>
+	</center>
+{% endblock %}

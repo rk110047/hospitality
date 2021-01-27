@@ -1,0 +1,21 @@
+{% include 'base.html' %}
+{% block content %}
+	<nav class=" navbar navbar-default shadow-sm" style="background-color: black" >
+		<a class="nav-link" href="{% url 'index' %}" style="color: #fff">Home</a>
+		<a class="nav-link" href="{% url 'services' %}" style="color: #fff">Services</a>
+		<a class="nav-link" href="{% url 'food-items' %}" style="color: #fff">Food</a>
+        <div class="nav-item dropdown">
+		    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="color: #fff">Information</a>
+		    <ul class="dropdown-menu" style="background-color: black">
+		      <li><a class="dropdown-item" href="{% url 'hotel-information' %}" style="color: #fff">Hotel Information</a></li>
+		      <li><a class="dropdown-item" href="{% url 'city-information' %}" style="color: #fff">City Information</a></li>
+		      <li><a class="dropdown-item" href="{% url 'places-information' %}" style="color: #fff">Places To Visit</a></li>
+		    </ul>
+	  </div>
+	  <a class="nav-link" href="{% url 'logout' %}" style="color: #fff;background-color: red;margin-right: 5px">Logout</a>
+    </nav>
+
+{% block body %}
+{% endblock %}
+
+{% endblock%}

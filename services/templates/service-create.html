@@ -1,0 +1,15 @@
+{% include 'home.html' %}
+{% block body %}
+	<div class="mt-5 " style="position:absolute;left: 20%;right:20%">
+		<form class="form" method="POST" style="display: flex;flex-direction: column;width: 100%;padding: 10px">
+			{% csrf_token %}
+			<p>Sevice Name</p>
+			<input type="text" name="service_name" required>
+			<p>Description</p>
+			<input type="text" name="description" required>
+			<p>Sevice Price</p>
+			<input type="text" name="service_price" required>
+			<button class="button " style="background-color: #17baa1;margin-top: 20px;color: #fff" type="submit">POST</button>
+		</form>
+	</div>
+{% endblock %}

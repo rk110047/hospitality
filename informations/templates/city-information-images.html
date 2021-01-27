@@ -1,0 +1,22 @@
+{% include 'home.html' %}
+{% block body %}
+	<div class="mt-5" style="display: flex;height: 100px;margin-left:20%;border: solid 1px;padding: 10px;margin-right: 20%">
+		<form class="form" action="." method="POST" style="width: 100%" enctype="multipart/form-data">
+			{% csrf_token %}
+			<p>Add Image:</p>
+			{{form}}
+			<button type="submit" style="background-color: #17baa1;width: 100px;color:#fff">POST</button>
+		</form>
+	</div>
+	<hr>
+	<div style="display: flex;flex-direction: row;flex-wrap: wrap;margin-bottom: 20px;margin-top:20px ">
+		{% for data in data %}
+		<div class="shadow-sm" style="display:flex;flex-direction: column;align-items: center;background-color: #e0ffff;padding:5px;margin: 5px;border-radius: 5px">
+			<img style="margin: 20px;border-radius: 5px" 
+				src="{{ data.image.url }}" width="390px" height="350px">
+			<a class="nav-link"  style="color: red" 
+			href="{% url 'city-information-images-delete' data.id %}">Delete</a>
+		</div>
+		{% endfor%}
+	</div>
+{% endblock %}
